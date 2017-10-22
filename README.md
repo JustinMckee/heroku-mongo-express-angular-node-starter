@@ -31,31 +31,34 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Heroku Setup
 ##
 
+**TODO**
 ## Heroku Prerequisites
 
 [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 
 [Node.js](https://nodejs.org/en/download/) version 4 or higher already installed if Angular CLI is up-to-date
 
-**bash**
+*bash*
 $ heroku create
 
 Generates your app and git repository in Heroku
 
+**TODO**
 ## Heroku Provision a MongoDB
 
 We’ll use the mLab add-on, a fully managed MongoDB service, to easily provision a new MongoDB database. *You will need to verify your account* and enter a credit card to create it. Otherwise your app will fail.
 
-**bash**
+*bash*
 $ heroku addons:create mongolab
 
 The database connection URI is automatically generated and stored as a config var (MONGODB_URI). It is used in ./server.js. Verify but do not change this variable at your Heroku Dashboard -> your-app-name -> Settings
 
-## Connect MongoDB and the app server using the Node.js driver **included**
+**TODO**
+## Heroku Deploy
 
-We'll use the official Node.js driver.
+*bash*
+$ git add .
+$ git commit -m "[message]"
+$ git push heroku master
 
-Note: Another option is to use an object document mapper called Mongoose that wraps the Node.js driver (similar to a SQL ORM)
-
-**bash**
-$ touch server.js
+$ heroku open
