@@ -44,18 +44,18 @@ Generates your app and git repository in Heroku
 
 ## Heroku Provision a MongoDB
 
-We’ll use the mLab add-on, a fully managed MongoDB service, to easily provision a new MongoDB database. You will need to verify your account and enter a credit card to create it.
+We’ll use the mLab add-on, a fully managed MongoDB service, to easily provision a new MongoDB database. *You will need to verify your account* and enter a credit card to create it. Otherwise your app will fail.
 
 **bash**
 $ heroku addons:create mongolab
 
-The database connection URI is stored as a config var. (process.env.MONGODB_URI)
+The database connection URI is automatically generated and stored as a config var (MONGODB_URI). It is used in ./server.js. Verify but do not change this variable at your Heroku Dashboard -> your-app-name -> Settings
 
 ## Connect MongoDB and the app server using the Node.js driver **included**
 
-We'll use the official Node.js driver
+We'll use the official Node.js driver.
+
+Note: Another option is to use an object document mapper called Mongoose that wraps the Node.js driver (similar to a SQL ORM)
 
 **bash**
 $ touch server.js
-
-Note: Another option is to use an object document mapper called Mongoose that wraps the Node.js driver (similar to a SQL ORM)
